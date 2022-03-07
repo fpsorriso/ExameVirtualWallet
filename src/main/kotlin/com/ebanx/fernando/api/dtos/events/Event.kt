@@ -1,6 +1,5 @@
 package com.ebanx.fernando.api.dtos.events
 
-import com.ebanx.fernando.api.domains.EventType
 import com.ebanx.fernando.api.formatters.EventTypeDeserializer
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
