@@ -12,8 +12,11 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 class CustomExceptionHandler : ResponseEntityExceptionHandler() {
     private val logger = LoggerFactory.getLogger(CustomExceptionHandler::class.java)
 
-    @ExceptionHandler(value = [AccountNotFoundException::class, BalancesNotFoundException::class])
-    fun notFoundHandler(ex: Exception,  request: WebRequest): ResponseEntity<Int> {
+    @ExceptionHandler(value = [AccountNotFoundException::class,
+        BalancesNotFoundException::class,
+        LimitExceededException::class
+    ])
+    fun notFoundHandler(ex: Exception, request: WebRequest): ResponseEntity<Int> {
         logger.warn("Not found values", ex)
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(0)
     }

@@ -20,6 +20,7 @@ class Wallet(val service: WalletService) {
         path = ["/reset"]
     )
     fun reset(): ResponseEntity<String> {
+        service.reset()
         return ResponseEntity.ok("OK")
     }
 
